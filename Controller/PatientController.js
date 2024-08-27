@@ -3,15 +3,20 @@ const axios = require('axios');
 exports.patientCredentials = async(req,res)=>{
     try{
         const{family,given,gender,birthDate}=req.body
-        // if(!given){
-        //     return res.status(404).json({message:"FamilyName is required"})
-        // }
-        // if(!gender){
-        //     return res.status(404).json({message:"Gender is required"})
-        // }
+    
         const params = new URLSearchParams();
-        params.append('given', given);
-        params.append('gender', gender); 
+        if (family) {
+            params.append('family', family);
+        }
+        if (given) {
+            params.append('given', given);
+        }
+        if (gender) {
+            params.append('gender', gender);
+        }
+        if (birthDate) {
+            params.append('birthDate', birthDate);
+        }
      
 
         const response = await axios.get(process.env.GETPATIENT_URL,
