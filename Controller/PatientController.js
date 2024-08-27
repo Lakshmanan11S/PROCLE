@@ -13,6 +13,7 @@ exports.patientCredentials = async(req,res)=>{
         }
         if (gender) {
             params.append('gender', gender);
+            
         }
         if (birthDate) {
             params.append('birthDate', birthDate);
@@ -27,7 +28,7 @@ exports.patientCredentials = async(req,res)=>{
                     'Accept': 'application/fhir+json',
                     'Authorization': 'Basic MGY0Yjk2YmMtMmZiYS00ZDFkLTkwOTItNDIzMjNkZmQwYmVhOjRCd1pyU3hWbTRrTEJ4bjc1Zmhoemt0Tk1Pd3FDTzly',
                 },
-                timeout: 5000, 
+                
             }
         );
 
@@ -58,7 +59,7 @@ exports.getToken=async(req,res)=> {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Authorization': 'Basic MGY0Yjk2YmMtMmZiYS00ZDFkLTkwOTItNDIzMjNkZmQwYmVhOjRCd1pyU3hWbTRrTEJ4bjc1Zmhoemt0Tk1Pd3FDTzly',
                 },
-                timeout: 5000, 
+               
             }
         );
 
@@ -87,7 +88,7 @@ exports.patientId=async(req,res)=>{
                     'Accept': 'application/fhir+json',
                     'Authorization': 'Basic MGY0Yjk2YmMtMmZiYS00ZDFkLTkwOTItNDIzMjNkZmQwYmVhOjRCd1pyU3hWbTRrTEJ4bjc1Zmhoemt0Tk1Pd3FDTzly',
                 },
-                timeout: 5000, 
+                
             }
         );
 

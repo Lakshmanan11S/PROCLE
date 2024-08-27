@@ -8,6 +8,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
 
 const patientRouter = require('./Router/PatientRouter');
+const vitalsRouter = require('./Router/VitalsData');
 
 const app = express();
 
@@ -26,4 +27,5 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api',patientRouter)
+app.use('/api',vitalsRouter)
 app.listen(PORT,()=>console.log("Server is running on:",PORT))
