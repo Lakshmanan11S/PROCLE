@@ -5,7 +5,7 @@
     "description": "Version 1.0",
     "version": "1.0.0"
   },
-  "host": "localhost:7000",
+  "host": "https://procle.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
