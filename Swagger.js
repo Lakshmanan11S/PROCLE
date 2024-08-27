@@ -6,8 +6,11 @@ const doc = {
     title: "PROCLE HEALTH API's",
     description: "Version 1.0"
   },
-  host: "localhost:7500",
-  basePath:"/",
+  host: "procle.onrender.com",  
+  basePath: "/",
+  schemes: ["https"], 
+  consumes: ["application/json"],
+  produces: ["application/json"]
 };
 
 const outputFile = "./swagger-output.json";

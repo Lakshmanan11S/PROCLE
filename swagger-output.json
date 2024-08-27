@@ -5,10 +5,10 @@
     "description": "Version 1.0",
     "version": "1.0.0"
   },
-  "host": "https://procle.onrender.com",
+  "host": "procle.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
