@@ -11,6 +11,7 @@ const patientRouter = require('./Router/PatientRouter');
 const vitalsRouter = require('./Router/VitalsDataRouter');
 const allergyRouter = require('./Router/AllergyDataRouter');
 const immunizationRouter = require('./Router/ImmunizationRouter');
+const conditionsRouter = require('./Router/ConditionsRouter');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use('/api',immunizationRouter)
 app.use('/api',patientRouter)
 app.use('/api',vitalsRouter)
 app.use('/api',allergyRouter)
+app.use('/api',conditionsRouter)
 
 
 app.listen(PORT,()=>console.log("Server is running on:",PORT))
