@@ -1,4 +1,5 @@
 const axios = require('axios');
+const Authorization = require('../Authorization');
 
 exports.patientCredentials = async(req,res)=>{
     try{
@@ -85,8 +86,7 @@ exports.patientId=async(req,res)=>{
            
             {   params,
                 headers: {
-                    'Accept': 'application/fhir+json',
-                    'Authorization': 'Basic MGY0Yjk2YmMtMmZiYS00ZDFkLTkwOTItNDIzMjNkZmQwYmVhOjRCd1pyU3hWbTRrTEJ4bjc1Zmhoemt0Tk1Pd3FDTzly',
+                    ...Authorization()
                 },
                 
             }

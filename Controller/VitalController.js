@@ -1,8 +1,9 @@
 const axios = require('axios');
+const Authorization = require('../Authorization');
 
 exports.vitalList = async (req, res) => {
     try {
-        const { id } = req.body;
+        const {id} = req.body;
         if (!id) {
             return res.status(404).json({ message: "Patient ID is required" });
         }
@@ -15,8 +16,7 @@ exports.vitalList = async (req, res) => {
             {
                 params, 
                 headers: {
-                    'Accept': 'application/fhir+json',
-                    'Authorization': 'Basic MGY0Yjk2YmMtMmZiYS00ZDFkLTkwOTItNDIzMjNkZmQwYmVhOjRCd1pyU3hWbTRrTEJ4bjc1Zmhoemt0Tk1Pd3FDTzly',
+                    ...Authorization()
                 },
                 
             }

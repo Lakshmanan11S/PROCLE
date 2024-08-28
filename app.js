@@ -8,7 +8,9 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
 
 const patientRouter = require('./Router/PatientRouter');
-const vitalsRouter = require('./Router/VitalsData');
+const vitalsRouter = require('./Router/VitalsDataRouter');
+const allergyRouter = require('./Router/AllergyDataRouter');
+const immunizationRouter = require('./Router/ImmunizationRouter');
 
 const app = express();
 
@@ -25,7 +27,10 @@ mongoose.connect(process.env.DATABASE_URL)
 app.get('/',(req,res)=>{
     res.send("Procle HealthCare")
 })
-
+app.use('/api',immunizationRouter)
 app.use('/api',patientRouter)
 app.use('/api',vitalsRouter)
+app.use('/api',allergyRouter)
+
+
 app.listen(PORT,()=>console.log("Server is running on:",PORT))
