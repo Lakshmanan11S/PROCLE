@@ -11,6 +11,7 @@ const medicationAdminstrations = require('../Router/Routes/MedicationAdministrat
 const medicationRouter = require('../Router/Routes/MedicationRouter');
 const appointmentRouter = require('../Router/Routes/AppointmentRouter');
 const familyHistoryRouter  = require('../Router/Routes/FamilyHistoryRouter');
+const procedureRouter = require('../Router/Routes/ProcedureRouter');
 
 
 router.use('/api', immunizationRouter);
@@ -22,6 +23,7 @@ router.use('/api', providerRouter);
 router.use('/api', medicationAdminstrations);
 router.use('/api', medicationRouter);
 router.use('/api', appointmentRouter);
-router.use('/api',familyHistoryRouter)
+router.use('/api',familyHistoryRouter);
+router.use('/api',procedureRouter);
 
 module.exports = router;

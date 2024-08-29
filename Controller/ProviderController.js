@@ -3,14 +3,7 @@ const axios = require('axios');
 
 exports.provider = async(req,res)=>{
     try{
-        // const {patient}=req.query
-        // if(!patient){
-        //     return res.status(404).json({messager:"Patient Id Must Be Required"})
-        // }
-        // const params = new URLSearchParams()
-        // params.append('patient',patient)
-
-        const response = await axios.get(`https://fhir-ehr-code.cerner.com/r4/ec2458f2-1e24-41c8-b71b-0e701af7583d/Practitioner?active=true`,
+        const response = await axios.get('https://fhir-ehr-code.cerner.com/r4/ec2458f2-1e24-41c8-b71b-0e701af7583d/Practitioner?active=true',
         {
             params,
             headers:{
