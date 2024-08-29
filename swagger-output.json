@@ -302,6 +302,29 @@
           }
         }
       }
+    },
+    "/api/procedure": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "patient",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   }
 }
