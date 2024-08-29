@@ -3,13 +3,13 @@ const Authorization = require('../Authorization');
 
 exports.immunizationData = async (req, res) => {
     try {
-        const { id } = req.body;
-        if (!id) {
+        const { patient } = req.query;
+        if (!patient) {
             return res.status(404).json({ message: "Patient ID is required" });
         }
 
         const params = new URLSearchParams();
-        params.append('patient', id);
+        params.append('patient', patient);
 
         const response = await axios.get(process.env.IMMUNIZATION_URL, {
             params,

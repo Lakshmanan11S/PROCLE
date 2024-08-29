@@ -28,20 +28,13 @@
       }
     },
     "/api/immunization": {
-      "post": {
+      "get": {
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "patient",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {
@@ -61,29 +54,28 @@
       }
     },
     "/api/patientcredentials": {
-      "post": {
+      "get": {
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "family": {
-                  "example": "any"
-                },
-                "given": {
-                  "example": "any"
-                },
-                "gender": {
-                  "example": "any"
-                },
-                "birthDate": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "family",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "given",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "gender",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "birthDate",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {
@@ -97,7 +89,7 @@
       }
     },
     "/api/gettoken": {
-      "post": {
+      "get": {
         "description": "",
         "responses": {
           "200": {
@@ -110,20 +102,13 @@
       }
     },
     "/api/getpatientbyid": {
-      "post": {
+      "get": {
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "id",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {
@@ -140,20 +125,18 @@
       }
     },
     "/api/vitallist": {
-      "post": {
+      "get": {
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "patient",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {
@@ -170,20 +153,13 @@
       }
     },
     "/api/allergydata": {
-      "post": {
+      "get": {
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "patient",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {
@@ -200,20 +176,118 @@
       }
     },
     "/api/conditions": {
-      "post": {
+      "get": {
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "patient",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/provider": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/medicationadmin": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "patient",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/medication": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "patient",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/appointment": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "patient",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/familyhistory": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "patient",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {

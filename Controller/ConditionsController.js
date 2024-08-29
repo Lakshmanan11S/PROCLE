@@ -3,12 +3,12 @@ const axios = require('axios');
 
 exports.conditions = async(req,res)=>{
     try{
-        const {id}=req.body
-        if(!id){
+        const {patient}=req.query
+        if(!patient){
             return res.status(404).json({messager:"Patient Id Must Be Required"})
         }
         const params = new URLSearchParams()
-        params.append('patient',id)
+        params.append('patient',patient)
 
         const response = await axios.get(process.env.CONDITIONS_URL,
         {

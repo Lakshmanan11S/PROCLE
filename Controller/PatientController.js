@@ -3,7 +3,7 @@ const Authorization = require('../Authorization');
 
 exports.patientCredentials = async(req,res)=>{
     try{
-        const{family,given,gender,birthDate}=req.body
+        const{family,given,gender,birthDate}=req.query
     
         const params = new URLSearchParams();
         if (family) {
@@ -45,9 +45,7 @@ exports.patientCredentials = async(req,res)=>{
 
 
 
-
-
-exports.getToken=async(req,res)=> {
+exports.getToken = async (req, res) => {
     try {
         const params = new URLSearchParams();
         params.append('grant_type', 'client_credentials');
@@ -60,22 +58,18 @@ exports.getToken=async(req,res)=> {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Authorization': 'Basic MGY0Yjk2YmMtMmZiYS00ZDFkLTkwOTItNDIzMjNkZmQwYmVhOjRCd1pyU3hWbTRrTEJ4bjc1Zmhoemt0Tk1Pd3FDTzly',
                 },
-               
             }
         );
 
-        
-        res.status(200).json({message:"Token Generated Succesfully",data:response.data})
-        return response.data;
+        res.status(200).json({ message: "Token Generated Successfully", data: response.data });
     } catch (error) {
-        res.status(500).json({message:"Internal Server Error"})
+        res.status(500).json({ message: "Internal Server Error", error: error.message });
     }
-}
-
+};
 
 exports.patientId=async(req,res)=>{
     try{
-        const {id}=req.body
+        const {id}=req.query
         if(!id){
             return res.status(404).json({message:"Must Be Need Patiend Id"})
         }
@@ -95,6 +89,6 @@ exports.patientId=async(req,res)=>{
         res.status(200).json({message:"Patient Details",data:response.data})
         return response.data;
     }catch(error){
-        res.status(500).json({message:"Internal Server Error"})
+        res.status(500).json({message:"Internal Server Error",error})
     }
 }
