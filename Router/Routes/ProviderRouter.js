@@ -1,10 +1,10 @@
-const express = require('express');
-const providerController = require('../../Controller/ProviderController');
-const router = express.Router();
+// const express = require('express');
+// const providerController = require('../../Controller/ProviderController');
+// const router = express.Router();
 
 
 
-router.get('/provider',providerController.provider)
+// router.get('/provider',providerController.provider)
 
 
-module.exports = router;
+// module.exports = router;
